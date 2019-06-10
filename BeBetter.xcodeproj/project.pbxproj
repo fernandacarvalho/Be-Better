@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B0D0A75275684CCDEFFDE050 /* Pods_BeBetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE73E140BC3577ADD34BCD5 /* Pods_BeBetter.framework */; };
+		EF6313BA22A0408500D5244B /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6313B922A0408500D5244B /* Exercise.swift */; };
+		EF6313BC22A0469200D5244B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6313BB22A0469200D5244B /* Category.swift */; };
+		EF6313C322A05C7900D5244B /* CreateExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6313C122A05C7900D5244B /* CreateExercise.swift */; };
+		EF6313C422A05C7900D5244B /* CreateExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF6313C222A05C7900D5244B /* CreateExercise.xib */; };
+		EF917D4A2295C5D100BF9F2C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF917D492295C5D100BF9F2C /* Extensions.swift */; };
+		EF917D4C2295C60F00BF9F2C /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF917D4B2295C60F00BF9F2C /* MainNavigationController.swift */; };
+		EF917D4E2295CE7F00BF9F2C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF917D4D2295CE7F00BF9F2C /* User.swift */; };
+		EFB81B30229C741F00FC850A /* CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81B2E229C741F00FC850A /* CategoriesList.swift */; };
+		EFB81B31229C741F00FC850A /* CategoriesList.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB81B2F229C741F00FC850A /* CategoriesList.xib */; };
 		F673F5FF225D9F3A00B37DE4 /* ExercisesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673F5FD225D9F3A00B37DE4 /* ExercisesList.swift */; };
 		F673F600225D9F3A00B37DE4 /* ExercisesList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F673F5FE225D9F3A00B37DE4 /* ExercisesList.xib */; };
 		F6758453225BFC55000A603D /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6758452225BFC55000A603D /* ApplicationData.swift */; };
@@ -27,6 +36,15 @@
 		2DE73E140BC3577ADD34BCD5 /* Pods_BeBetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeBetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A6342DFAB1910787E33996 /* Pods-BeBetter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBetter.release.xcconfig"; path = "Target Support Files/Pods-BeBetter/Pods-BeBetter.release.xcconfig"; sourceTree = "<group>"; };
 		EB25CE7DF34A38770851E959 /* Pods-BeBetter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBetter.debug.xcconfig"; path = "Target Support Files/Pods-BeBetter/Pods-BeBetter.debug.xcconfig"; sourceTree = "<group>"; };
+		EF6313B922A0408500D5244B /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		EF6313BB22A0469200D5244B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EF6313C122A05C7900D5244B /* CreateExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExercise.swift; sourceTree = "<group>"; };
+		EF6313C222A05C7900D5244B /* CreateExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CreateExercise.xib; path = ../Controller/CreateExercise.xib; sourceTree = "<group>"; };
+		EF917D492295C5D100BF9F2C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EF917D4B2295C60F00BF9F2C /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		EF917D4D2295CE7F00BF9F2C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFB81B2E229C741F00FC850A /* CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesList.swift; sourceTree = "<group>"; };
+		EFB81B2F229C741F00FC850A /* CategoriesList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoriesList.xib; path = ../Controller/CategoriesList.xib; sourceTree = "<group>"; };
 		F673F5FD225D9F3A00B37DE4 /* ExercisesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesList.swift; sourceTree = "<group>"; };
 		F673F5FE225D9F3A00B37DE4 /* ExercisesList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExercisesList.xib; sourceTree = "<group>"; };
 		F6758452225BFC55000A603D /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
@@ -104,6 +122,8 @@
 			children = (
 				F6AB16B6225AC68A00A96C14 /* Main.storyboard */,
 				F6AB16B2225AC68A00A96C14 /* AppDelegate.swift */,
+				F6AB16D0225ADB7000A96C14 /* StaticValues.swift */,
+				EF917D492295C5D100BF9F2C /* Extensions.swift */,
 				F6758451225BFC2F000A603D /* Data */,
 				F6AB16C9225AD16A00A96C14 /* Model */,
 				F6AB16CA225AD17000A96C14 /* View */,
@@ -113,7 +133,6 @@
 				F6AB16C1225AC68B00A96C14 /* Info.plist */,
 				F6AB16C7225AC87D00A96C14 /* GoogleService-Info.plist */,
 				F6AB16B9225AC68A00A96C14 /* BeBetter.xcdatamodeld */,
-				F6AB16D0225ADB7000A96C14 /* StaticValues.swift */,
 			);
 			path = BeBetter;
 			sourceTree = "<group>";
@@ -122,6 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				F6758454225BFE00000A603D /* DAOUser.swift */,
+				EF917D4D2295CE7F00BF9F2C /* User.swift */,
+				EF6313B922A0408500D5244B /* Exercise.swift */,
+				EF6313BB22A0469200D5244B /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +153,8 @@
 			children = (
 				F6AB16CD225AD7F300A96C14 /* Login.xib */,
 				F673F5FE225D9F3A00B37DE4 /* ExercisesList.xib */,
+				EFB81B2F229C741F00FC850A /* CategoriesList.xib */,
+				EF6313C222A05C7900D5244B /* CreateExercise.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +164,9 @@
 			children = (
 				F6AB16CC225AD7F300A96C14 /* Login.swift */,
 				F673F5FD225D9F3A00B37DE4 /* ExercisesList.swift */,
+				EF917D4B2295C60F00BF9F2C /* MainNavigationController.swift */,
+				EFB81B2E229C741F00FC850A /* CategoriesList.swift */,
+				EF6313C122A05C7900D5244B /* CreateExercise.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,8 +235,10 @@
 				F6AB16C8225AC87D00A96C14 /* GoogleService-Info.plist in Resources */,
 				F6AB16BD225AC68B00A96C14 /* Assets.xcassets in Resources */,
 				F673F600225D9F3A00B37DE4 /* ExercisesList.xib in Resources */,
+				EFB81B31229C741F00FC850A /* CategoriesList.xib in Resources */,
 				F6AB16B8225AC68A00A96C14 /* Main.storyboard in Resources */,
 				F6AB16CF225AD7F300A96C14 /* Login.xib in Resources */,
+				EF6313C422A05C7900D5244B /* CreateExercise.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,12 +302,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF917D4C2295C60F00BF9F2C /* MainNavigationController.swift in Sources */,
+				EF6313C322A05C7900D5244B /* CreateExercise.swift in Sources */,
 				F673F5FF225D9F3A00B37DE4 /* ExercisesList.swift in Sources */,
 				F6758453225BFC55000A603D /* ApplicationData.swift in Sources */,
 				F6AB16CE225AD7F300A96C14 /* Login.swift in Sources */,
+				EF917D4A2295C5D100BF9F2C /* Extensions.swift in Sources */,
+				EF6313BA22A0408500D5244B /* Exercise.swift in Sources */,
 				F6AB16D1225ADB7000A96C14 /* StaticValues.swift in Sources */,
 				F6AB16BB225AC68A00A96C14 /* BeBetter.xcdatamodeld in Sources */,
 				F6AB16B3225AC68A00A96C14 /* AppDelegate.swift in Sources */,
+				EF6313BC22A0469200D5244B /* Category.swift in Sources */,
+				EF917D4E2295CE7F00BF9F2C /* User.swift in Sources */,
+				EFB81B30229C741F00FC850A /* CategoriesList.swift in Sources */,
 				F6758455225BFE00000A603D /* DAOUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D56YT45BUR;
+				DEVELOPMENT_TEAM = 4565V537VB;
 				INFOPLIST_FILE = BeBetter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,7 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D56YT45BUR;
+				DEVELOPMENT_TEAM = 4565V537VB;
 				INFOPLIST_FILE = BeBetter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

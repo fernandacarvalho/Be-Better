@@ -31,10 +31,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="si9-nd-RAO">
-                                    <rect key="frame" x="38.666666666666657" y="88.666666666666657" width="297.66666666666674" height="189.99999999999997"/>
+                                    <rect key="frame" x="54" y="88.666666666666657" width="267.33333333333331" height="189.99999999999997"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="yIQ-2A-ddX">
-                                            <rect key="frame" x="31.333333333333343" y="0.0" width="235.00000000000003" height="100"/>
+                                            <rect key="frame" x="16" y="0.0" width="235" height="100"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="Gu1-vU-IMV">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -53,17 +53,17 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gLS-yw-WTQ">
-                                            <rect key="frame" x="0.0" y="140.00000000000003" width="297.66666666666669" height="50"/>
+                                            <rect key="frame" x="0.0" y="140.00000000000003" width="267.33333333333331" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be Better não pretende substituir" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3E-Ea-kVE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="297.66666666666669" height="22"/>
-                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="267.33333333333331" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" a relação paciente-médico." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miF-ez-eB8">
-                                                    <rect key="frame" x="0.0" y="28" width="297.66666666666669" height="22"/>
-                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                                    <rect key="frame" x="0.0" y="28" width="267.33333333333331" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -85,27 +85,27 @@
                             <rect key="frame" x="0.0" y="367" width="375" height="367"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-CK-4aQ">
-                                    <rect key="frame" x="20" y="116" width="335" height="135"/>
+                                    <rect key="frame" x="20" y="114.66666666666663" width="335" height="138"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-df-rw3">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fff@gmail.com" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-df-rw3">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WkS-M7-dBI">
-                                            <rect key="frame" x="0.0" y="50" width="335" height="35"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WkS-M7-dBI">
+                                            <rect key="frame" x="0.0" y="51" width="335" height="36"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aeI-e1-IJa">
-                                            <rect key="frame" x="0.0" y="100" width="335" height="35"/>
+                                            <rect key="frame" x="0.0" y="102" width="335" height="36"/>
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-EP-NHi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="36"/>
                                                     <color key="backgroundColor" red="0.1960784314" green="0.59215686270000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <state key="normal" title="LOGAR">
                                                         <color key="titleColor" red="0.88469582800000002" green="0.78865003590000005" blue="0.74186676740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -114,9 +114,9 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3u-HA-Mzs">
-                                                    <rect key="frame" x="175" y="0.0" width="160" height="35"/>
+                                                    <rect key="frame" x="175" y="0.0" width="160" height="36"/>
                                                     <color key="backgroundColor" red="0.1960784314" green="0.59215686270000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <state key="normal" title="CADASTRAR">
                                                         <color key="titleColor" red="0.88469582800000002" green="0.78865003590000005" blue="0.74186676740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>

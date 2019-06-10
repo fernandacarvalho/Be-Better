@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         FirebaseApp.configure()
-        let database = Database.database().reference()
+        //let database = Database.database().reference()
         
         return true
     }

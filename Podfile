@@ -10,6 +10,7 @@ target 'BeBetter' do
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+pod 'RealmSwift'
 
 
 end

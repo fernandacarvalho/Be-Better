@@ -15,6 +15,8 @@ private let data = DAOUser()
 
 class DAOUser : NSObject
 {
+    var loggedUser: User?
+    
     class var sharedInstance : DAOUser {
         return data
     }
@@ -23,16 +25,19 @@ class DAOUser : NSObject
     {
         super.init()
         
-        
     }
     
-    func createUser(email: String, password: String){
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if(error != nil){
-                print(error!)
-            } else if let currentUser = user {
-                print(currentUser)
-            }
+    func setCurrentUser(email: String, id: String){
+        if(self.loggedUser != nil){
+            self.loggedUser!.email = email
+            self.loggedUser!.id = id
         }
+        else {
+            self.loggedUser = User(name: "", email: email, id: id)
+        }
+    }
+    
+    func getCurrentUser() -> User? {
+        return self.loggedUser
     }
 }
