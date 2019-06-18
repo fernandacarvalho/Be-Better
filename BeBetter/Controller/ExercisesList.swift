@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ExercisesList: UIViewController {
-    
+class ExercisesList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var category : Category!
     var exercises : [Exercise]!
+    var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,9 @@ class ExercisesList: UIViewController {
         self.navigationItem.rightBarButtonItem = rightButton
         
         self.category = ApplicationData.sharedInstance.getSelectedCategory()
+        self.registerNotifications()
         self.getExercises()
+        self.configureTableView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +40,15 @@ class ExercisesList: UIViewController {
         backButton.tintColor = UIColor.white
         self.navigationItem.backBarButtonItem = backButton
     }
+    
+    func registerNotifications(){
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(self.exerciseCreated), name: NSNotification.Name("EXERCISE_CREATED"), object: nil)
+    }
+    
+    @objc func exerciseCreated(){
+        self.getExercises()
+    }
 
     @objc func goToCreateExercise(){
         let createExerciseVC = CreateExercise()
@@ -46,7 +57,41 @@ class ExercisesList: UIViewController {
     
     func getExercises(){
         ApplicationData.sharedInstance.getExercisesByCategory(category: self.category) { (exercises) in
-            self.exercises = exercises as! [Exercise]
+            
+            self.exercises = exercises as? [Exercise]
+            self.tableView.reloadData()
         }
+    }
+    
+    func configureTableView(){
+        self.tableView = UITableView(frame: CGRect(x: 0, y: navHeight, width: screenWidth, height: screenHeight-navHeight))
+        self.tableView.backgroundColor = UIColor.clear
+        self.view.addSubview(self.tableView)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    //MARK: TableView Protocols
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
+        cell.selectionStyle = .none
+        if self.exercises != nil {
+            cell.textLabel?.text =  self.exercises[indexPath.row].name
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.exercises != nil ? self.exercises.count : 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
 }

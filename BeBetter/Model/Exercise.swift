@@ -19,9 +19,9 @@ class Exercise : NSObject
     var totalDone : Int!
     var progressAverage : Int!
     var tutorial : String?
-    var id : Int!
+    var id : String!
     
-    init(name: String, date: NSDate, numberOfWeeks: Int, weekRepetitions: Int, totalToDo: Int, totalDone: Int, progressAverage: Int, tutorial: String?)
+    init(name: String, date: NSDate, numberOfWeeks: Int, weekRepetitions: Int, totalToDo: Int, totalDone: Int, progressAverage: Int, tutorial: String?, id: String)
     {
         self.name = name
         self.date = date
@@ -31,6 +31,7 @@ class Exercise : NSObject
         self.totalDone = totalDone
         self.progressAverage = progressAverage
         self.tutorial = tutorial
+        self.id = id
         
         super.init()
     }

@@ -77,17 +77,19 @@ class ApplicationData : NSObject
         let progressAverage = 0
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .long
         dateFormatter.locale = Locale(identifier: "en_US")
         let dateString = dateFormatter.string(from: date)
         let category = self.selectedCategory!.rawValue
         
-        let dict = ["name" : name, "date" : dateString, "numberOfWeeks" : numberOfWeeks, "weekRepetitions" : weekRepetitions, "totalToDo" : totalToDo, "totalDone" : totalDone, "progressAverage" : progressAverage, "category": category] as [String : Any]
+        var dict = ["name" : name, "date" : dateString, "numberOfWeeks" : numberOfWeeks, "weekRepetitions" : weekRepetitions, "totalToDo" : totalToDo, "totalDone" : totalDone, "progressAverage" : progressAverage, "category": category] as [String : Any]
         
         if let currentUser = DAOUser.sharedInstance.getCurrentUser() {
             if let id = currentUser.id  {
                 let userKey = String(id)
+                let exerciseId = userKey + removeSpacesFromString(str: dateString)
+                dict["id"] = exerciseId
                 let database = Database.database().reference().child("users").child(userKey).child("exercises")
                 self.getAllUserExercises(userKey: userKey) { (exercisesArray) in
                     let exercises = exercisesArray.adding(dict) as NSArray
@@ -118,7 +120,7 @@ class ApplicationData : NSObject
         }
     }
     
-    func getExercisesByCategory(category: Category, completion: @escaping (NSArray) -> ()) {
+    func getExercisesByCategory(category: Category, completion: @escaping ([Exercise]) -> ()) {
         var exercises : NSArray = []
         if let currentUser = DAOUser.sharedInstance.getCurrentUser() {
             if let id = currentUser.id  {
@@ -126,16 +128,34 @@ class ApplicationData : NSObject
                 let database = Database.database().reference().child("users").child(userKey).child("exercises")
                 
                 database.observeSingleEvent(of: .value) { (snapshot) in
+                    var list : [Exercise] = []
                     if let exercisesArray = snapshot.value as? NSArray {
+                        
                         for item in exercisesArray  {
                             let exercise = item as! NSDictionary
                             let cat = exercise["category"] as! Int
+                            let name = exercise["name"] as! String
+                            let dateString = exercise["date"] as! String
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateStyle = .long
+                            dateFormatter.timeStyle = .long
+                            dateFormatter.locale = Locale(identifier: "en_US")
+                            let date = dateFormatter.date(from: dateString) ?? Date()
+                            let numberOfWeeks = exercise["numberOfWeeks"] as! Int
+                            let weekRepetitions = exercise["weekRepetitions"] as! Int
+                            let totalToDo = exercise["totalToDo"] as! Int
+                            let totalDone = exercise["totalDone"] as! Int
+                            let progressAverage = exercise["progressAverage"] as! Int
+                            let tutorial = "vazio"
+                            let id = exercise["id"] as! String
+                            let exObject = Exercise(name: name, date: date as NSDate, numberOfWeeks: numberOfWeeks, weekRepetitions: weekRepetitions, totalToDo: totalToDo, totalDone: totalDone, progressAverage: progressAverage, tutorial: tutorial, id: id)
                             if cat == category.rawValue {
-                                exercises = exercises.adding(exercise) as NSArray
+                                exercises = exercises.adding(exObject) as NSArray
                             }
                         }
+                        list = exercises as! [Exercise]
                     }
-                    completion(exercises)
+                    completion(list)
                 }
             }
         }
@@ -162,5 +182,21 @@ class ApplicationData : NSObject
                 print("Data saved successfully!")
             }
         }
+    }
+    
+    func removeSpacesFromString(str: String) -> String {
+        if !str.isEmpty {
+            let formattedString = str.replacingOccurrences(of: " ", with: "")
+            return formattedString
+        }
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .long
+        dateFormatter.locale = Locale(identifier: "en_US")
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
     }
 }
