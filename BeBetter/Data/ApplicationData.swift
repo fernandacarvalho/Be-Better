@@ -88,7 +88,9 @@ class ApplicationData : NSObject
         if let currentUser = DAOUser.sharedInstance.getCurrentUser() {
             if let id = currentUser.id  {
                 let userKey = String(id)
-                let exerciseId = userKey + removeSpacesFromString(str: dateString)
+                let randon = arc4random()
+                let stringRandon = String(randon)
+                let exerciseId =  userKey + stringRandon + removeSpacesFromString(str: dateString)
                 dict["id"] = exerciseId
                 let database = Database.database().reference().child("users").child(userKey).child("exercises")
                 self.getAllUserExercises(userKey: userKey) { (exercisesArray) in
@@ -120,7 +122,7 @@ class ApplicationData : NSObject
         }
     }
     
-    func getExercisesByCategory(category: Category, completion: @escaping ([Exercise]) -> ()) {
+    func getExercisesByCategory(category: Category, completion: @escaping (NSArray) -> ()) {
         var exercises : NSArray = []
         if let currentUser = DAOUser.sharedInstance.getCurrentUser() {
             if let id = currentUser.id  {
@@ -128,7 +130,6 @@ class ApplicationData : NSObject
                 let database = Database.database().reference().child("users").child(userKey).child("exercises")
                 
                 database.observeSingleEvent(of: .value) { (snapshot) in
-                    var list : [Exercise] = []
                     if let exercisesArray = snapshot.value as? NSArray {
                         
                         for item in exercisesArray  {
@@ -153,9 +154,8 @@ class ApplicationData : NSObject
                                 exercises = exercises.adding(exObject) as NSArray
                             }
                         }
-                        list = exercises as! [Exercise]
                     }
-                    completion(list)
+                    completion(exercises)
                 }
             }
         }
@@ -183,6 +183,8 @@ class ApplicationData : NSObject
             }
         }
     }
+    
+    //MARK: Auxiliar methods
     
     func removeSpacesFromString(str: String) -> String {
         if !str.isEmpty {
