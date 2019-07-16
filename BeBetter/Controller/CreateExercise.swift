@@ -22,13 +22,13 @@ class CreateExercise: UIViewController {
         self.registerNotifications()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = false
+//    }
     
     func registerNotifications(){
         let center = NotificationCenter.default
@@ -41,8 +41,8 @@ class CreateExercise: UIViewController {
     }
     
     @IBAction func createExercise(_ sender: Any) {
-        guard let description = self.descriptionField.text, let duration = self.durationField.text, let repetitions = self.repetitionsField.text else {
-            self.showAlert(title: "Invalid", message: "Please, fill all fields!")
+        guard let description = self.descriptionField.text, !description.isEmpty,  let duration = self.durationField.text, !duration.isEmpty, let repetitions = self.repetitionsField.text, !repetitions.isEmpty else {
+            self.showAlert(title: "Campos vazios", message: "Po favor, preencha todos os campos.")
             return
         }
         

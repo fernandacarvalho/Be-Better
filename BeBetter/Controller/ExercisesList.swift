@@ -9,9 +9,11 @@
 import UIKit
 
 class ExercisesList: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var category : Category!
     var exercises : [Exercise]!
-    var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,17 +58,16 @@ class ExercisesList: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func getExercises(){
+        showSpinner(onView: self.view)
         ApplicationData.sharedInstance.getExercisesByCategory(category: self.category) { (exercises) in
-            
+    
             self.exercises = exercises as? [Exercise]
             self.tableView.reloadData()
+            self.removeSpinner()
         }
     }
     
     func configureTableView(){
-        self.tableView = UITableView(frame: CGRect(x: 0, y: navHeight, width: screenWidth, height: screenHeight-navHeight))
-        self.tableView.backgroundColor = UIColor.clear
-        self.view.addSubview(self.tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")

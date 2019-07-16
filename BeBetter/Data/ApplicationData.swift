@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseCore
 
 private let data = ApplicationData()
 
@@ -24,8 +25,9 @@ class ApplicationData : NSObject
     override init()
     {
         super.init()
+
     }
-    
+        
     //category
     
     func setSelectedCategory(category: Category){
@@ -59,7 +61,7 @@ class ApplicationData : NSObject
                 let errorDescription:[String: String] = ["error": error!.localizedDescription]
                 NotificationCenter.default.post(name:  Notification.Name(rawValue: "USER_NOT_REGISTERED"), object: nil, userInfo: errorDescription)
                 
-            } else if let currentUser = user {
+            } else if let currentUser = user?.user {
                 NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "USER_REGISTERED")))
                 let database = Database.database().reference().child("users").child("\(currentUser.uid)")
                 let newUserDict = ["email": email, "id": currentUser.uid]

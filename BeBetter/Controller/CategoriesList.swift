@@ -23,8 +23,6 @@ class CategoriesList: UIViewController {
 //        self.speechButton.layer.cornerRadius = 75;
 //        self.ophthalmoButton.layer.cornerRadius = 75;
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool){
